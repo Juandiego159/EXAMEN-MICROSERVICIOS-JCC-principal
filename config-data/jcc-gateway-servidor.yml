@@ -1,0 +1,29 @@
+server:
+  port: 8085
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enable: true
+      routes:
+        - id: jcc-libro-service
+          uri: lb://jcc-libro-service
+          predicates:
+            - Path=/libros/**
+        - id: jcc-usuario-service
+          uri: lb://jcc-usuario-service
+          predicates:
+            - Path=/usuarios/**
+        - id: jcc-prestamo-service
+          uri: lb://jcc-prestamo-service
+          predicates:
+            - Path=/prestamos/**

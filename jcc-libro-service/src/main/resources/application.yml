@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: jcc-libro-service
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://:paricahua@localhost:7070
