@@ -13,5 +13,5 @@ spring:
           default-label: principal
   security:
     user:
-      name: 
-      password: paricahua
+      name: juan
+      password: diego
